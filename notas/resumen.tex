@@ -1,0 +1,223 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue
+}
+
+\definecolor{godotblue}{RGB}{71,114,179}
+\definecolor{lightblue}{RGB}{235,242,250}
+\definecolor{codebg}{RGB}{245,245,245}
+
+\titleformat{\section}
+{\Large\bfseries\color{godotblue}}
+{\thesection.}{0.5em}{}
+
+\lstset{
+	backgroundcolor=\color{codebg},
+	basicstyle=\ttfamily\small,
+	frame=single,
+	breaklines=true,
+	showstringspaces=false
+}
+
+\begin{document}
+
+\begin{center}
+
+{\Huge\bfseries Guía Rápida}\\[0.4cm]
+
+{\LARGE Recursos Interactivos con Godot}\\[0.3cm]
+
+{\large Exportación Web + GitHub Pages}
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[
+	colback=lightblue,
+	colframe=godotblue,
+	width=0.9\textwidth
+]
+Esta guía recoge los pasos mínimos necesarios para publicar una figura
+interactiva desarrollada en Godot utilizando GitHub Pages.
+Está pensada como recordatorio rápido para futuros proyectos.
+\end{tcolorbox}
+
+\end{center}
+
+\section{Exportación desde Godot}
+
+Una vez finalizado el proyecto:
+
+\begin{enumerate}[label=\arabic*.]
+	\item Abrir:
+	\texttt{Proyecto $\rightarrow$ Exportar}
+	
+	\item Seleccionar:
+	\texttt{Web}
+	
+	\item Exportar el proyecto.
+	
+	\item Utilizar como nombre:
+	
+	\begin{center}
+		\Large\texttt{index}
+	\end{center}
+	
+	De este modo Godot generará automáticamente:
+	
+\begin{lstlisting}
+index.html
+index.js
+index.wasm
+index.pck
+\end{lstlisting}
+
+	\item Comprobar que todos los archivos se encuentran en la carpeta de exportación.
+\end{enumerate}
+
+\section{Creación del repositorio en GitHub}
+
+Crear un repositorio nuevo en GitHub:
+
+\begin{itemize}
+	\item Público.
+	\item Sin README.
+	\item Sin .gitignore.
+	\item Sin licencia.
+\end{itemize}
+
+Por ejemplo:
+
+\begin{center}
+\texttt{fenomeno-runge}
+\end{center}
+
+La URL SSH tendrá la forma:
+
+\begin{lstlisting}
+git@github.com:eduroyo/fenomeno-runge.git
+\end{lstlisting}
+
+\section{Inicialización del repositorio local}
+
+Situarse en la carpeta exportada y ejecutar:
+
+\begin{lstlisting}
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:eduroyo/fenomeno-runge.git
+git push -u origin main
+\end{lstlisting}
+
+\section{Actualizaciones posteriores}
+
+Si el repositorio ya existe y únicamente se desea actualizar el contenido:
+
+\begin{lstlisting}
+git add .
+git commit -m "actualizacion"
+git push
+\end{lstlisting}
+
+\section{Activar GitHub Pages}
+
+En el repositorio:
+
+\begin{center}
+\texttt{Settings $\rightarrow$ Pages}
+\end{center}
+
+Seleccionar:
+
+\begin{itemize}
+	\item Source: \texttt{Deploy from a branch}
+	\item Branch: \texttt{main}
+	\item Folder: \texttt{/ (root)}
+\end{itemize}
+
+Guardar los cambios.
+
+\section{URL final}
+
+Tras unos minutos la aplicación quedará accesible en:
+
+\begin{lstlisting}
+https://eduroyo.github.io/fenomeno-runge/
+\end{lstlisting}
+
+\section{Comprobaciones rápidas}
+
+Verificar conexión SSH:
+
+\begin{lstlisting}
+ssh -T git@github.com
+\end{lstlisting}
+
+La respuesta debe ser similar a:
+
+\begin{lstlisting}
+Hi eduroyo! You've successfully authenticated...
+\end{lstlisting}
+
+Consultar la rama actual:
+
+\begin{lstlisting}
+git branch
+\end{lstlisting}
+
+Consultar el repositorio remoto:
+
+\begin{lstlisting}
+git remote -v
+\end{lstlisting}
+
+\section{Notas}
+
+\begin{tcolorbox}[
+	colback=lightblue,
+	colframe=godotblue
+]
+\begin{itemize}
+	\item Utilizar siempre nombres sencillos para los repositorios.
+	\item Mantener la rama principal como \texttt{main}.
+	\item Comprobar que los archivos \texttt{.wasm} y \texttt{.pck} se han subido correctamente.
+	\item Si Git pide usuario y contraseña, probablemente se esté usando HTTPS en lugar de SSH.
+	\item La URL remota debería comenzar por:
+	
+\begin{center}
+\texttt{git@github.com:}
+\end{center}
+
+\end{itemize}
+\end{tcolorbox}
+
+\vfill
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+
+\vspace{0.2cm}
+
+\textit{Programa de Incentivación de la Innovación Docente en la Universidad de Zaragoza}\\
+\textit{Matemáticas visuales: recursos interactivos para transformar el aprendizaje en grados STEM}
+
+\end{center}
+
+\end{document}

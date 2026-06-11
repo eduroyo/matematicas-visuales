@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://d8ll5w2l1hvh"]
+
+[ext_resource type="Script" uid="uid://c2ufj2i8hrgkb" path="res://scripts/main.gd" id="1_mlr3p"]
+[ext_resource type="Script" uid="uid://7yqcwhjuck2u" path="res://scripts/graph_2d.gd" id="2_csr7n"]
+
+[node name="Control" type="Control" unique_id=857637513]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_mlr3p")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=698865798]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPanel" type="PanelContainer" parent="HSplitContainer" unique_id=1940623522]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/LeftPanel" unique_id=1297648073]
+layout_mode = 2
+
+[node name="HBox_f" type="HBoxContainer" parent="HSplitContainer/LeftPanel/VBoxContainer" unique_id=792929588]
+layout_mode = 2
+
+[node name="Label_f" type="Label" parent="HSplitContainer/LeftPanel/VBoxContainer/HBox_f" unique_id=1487731578]
+layout_mode = 2
+text = "f(x) = "
+
+[node name="FunctionSelector" type="OptionButton" parent="HSplitContainer/LeftPanel/VBoxContainer/HBox_f" unique_id=1036969078]
+layout_mode = 2
+
+[node name="HBox_n" type="HBoxContainer" parent="HSplitContainer/LeftPanel/VBoxContainer" unique_id=550252911]
+layout_mode = 2
+
+[node name="Label_n" type="Label" parent="HSplitContainer/LeftPanel/VBoxContainer/HBox_n" unique_id=1501440058]
+layout_mode = 2
+text = "n = "
+
+[node name="NodesSpinBox" type="SpinBox" parent="HSplitContainer/LeftPanel/VBoxContainer/HBox_n" unique_id=1550547589]
+layout_mode = 2
+min_value = 2.0
+value = 2.0
+rounded = true
+
+[node name="VBox_campled" type="VBoxContainer" parent="HSplitContainer/LeftPanel/VBoxContainer" unique_id=1939768872]
+layout_mode = 2
+
+[node name="Label_campled" type="Label" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_campled" unique_id=2127135961]
+layout_mode = 2
+text = "Spline grapado"
+
+[node name="HBox_campled" type="HBoxContainer" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_campled" unique_id=776961552]
+layout_mode = 2
+
+[node name="f\'(a)" type="Label" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_campled/HBox_campled" unique_id=2063347427]
+layout_mode = 2
+text = "f'(a) = "
+
+[node name="OptionButton" type="LineEdit" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_campled/HBox_campled" unique_id=424907]
+layout_mode = 2
+text = "0"
+
+[node name="f\'(b)" type="Label" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_campled/HBox_campled" unique_id=583351187]
+layout_mode = 2
+text = "f'(b) = "
+
+[node name="OptionButton2" type="LineEdit" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_campled/HBox_campled" unique_id=2083943391]
+layout_mode = 2
+text = "0"
+
+[node name="VBox_checkbox" type="VBoxContainer" parent="HSplitContainer/LeftPanel/VBoxContainer" unique_id=296328388]
+layout_mode = 2
+
+[node name="CheckBox_f" type="CheckBox" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_checkbox" unique_id=1734959833]
+layout_mode = 2
+text = "Funcion original"
+
+[node name="CheckBox_polinomio" type="CheckBox" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_checkbox" unique_id=872175441]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9019608, 0.12941177, 0.14901961, 1)
+theme_override_colors/font_focus_color = Color(0.9019608, 0.12941177, 0.14901961, 1)
+theme_override_colors/font_pressed_color = Color(0.9019608, 0.12941177, 0.14901961, 1)
+text = "Polinomio interpolante"
+
+[node name="CheckBox_natural" type="CheckBox" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_checkbox" unique_id=1585991392]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12315822, 0.9857998, 0.12315822, 1)
+theme_override_colors/font_focus_color = Color(0, 0.827451, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.827451, 0, 1)
+text = "Spline natural"
+
+[node name="CheckBox_campled" type="CheckBox" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_checkbox" unique_id=733890600]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.047058824, 1)
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0.011764706, 1)
+theme_override_colors/font_pressed_color = Color(0.8745098, 0.8745098, 0.047058824, 1)
+text = "Spline grapado"
+
+[node name="CheckBox_nodos" type="CheckBox" parent="HSplitContainer/LeftPanel/VBoxContainer/VBox_checkbox" unique_id=1809250757]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.773, 0.161, 0.435, 1)
+theme_override_colors/font_focus_color = Color(0.773, 0.161, 0.435, 1)
+theme_override_colors/font_pressed_color = Color(0.773, 0.161, 0.435, 1)
+text = "Nodos"
+
+[node name="RightPanel" type="PanelContainer" parent="HSplitContainer" unique_id=622392119]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Graph2D" type="Control" parent="HSplitContainer/RightPanel" unique_id=71071317]
+custom_minimum_size = Vector2(0, -1000)
+layout_mode = 2
+script = ExtResource("2_csr7n")

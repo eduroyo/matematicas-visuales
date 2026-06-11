@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://bayqbki7bvj8r"]
+
+[ext_resource type="Script" uid="uid://dex5s2uwitrns" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://do5svur575jjf" path="res://grafica_funcion.gd" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://xdrjawwqdvv7" path="res://grafica_error.gd" id="3_1bvp3"]
+
+[node name="Main" type="Node2D" unique_id=1180340995]
+script = ExtResource("1_ig7tw")
+
+[node name="Control" type="Control" parent="." unique_id=1100755710]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SliderN" type="HSlider" parent="Control" unique_id=1093119924]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.2
+anchor_top = -9.7
+anchor_right = 13.2
+anchor_bottom = -9.7
+offset_left = 200.0
+offset_top = 500.0
+offset_right = 600.0
+offset_bottom = 530.0
+min_value = 1.0
+value = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelN" type="Label" parent="Control" unique_id=830805229]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 18.5
+anchor_top = 3.55
+anchor_right = 18.5
+anchor_bottom = 3.5500004
+offset_right = 40.0
+offset_bottom = 22.999985
+theme_override_colors/font_color = Color(0.035346244, 0.035346244, 0.03534624, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelError" type="Label" parent="Control" unique_id=364797932]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 11.2
+anchor_top = 11.3
+anchor_right = 11.2
+anchor_bottom = 11.775
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.083392, 0.083392, 0.08339202, 1)
+text = "Error"
+metadata/_edit_use_anchors_ = true
+
+[node name="Metodo" type="OptionButton" parent="Control" unique_id=1444013551]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 18.15
+anchor_top = -1.7
+anchor_right = 18.65
+anchor_bottom = -1.7
+offset_top = 104.0
+offset_right = 32.0
+offset_bottom = 124.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Labelf" type="Label" parent="Control" unique_id=1656533724]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 125.0
+offset_right = 280.0
+offset_bottom = 148.0
+
+[node name="Labelx_start" type="Label" parent="Control" unique_id=1817683327]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 434.0
+offset_right = 72.0
+offset_bottom = 457.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Labelx_end" type="Label" parent="Control" unique_id=634120828]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 432.0
+offset_right = 987.0
+offset_bottom = 455.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="GraficaFuncion" type="Node2D" parent="." unique_id=540976858]
+position = Vector2(34, 251)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("2_h2yge")
+
+[node name="GraficaError" type="Node2D" parent="." unique_id=850359050]
+visible = false
+position = Vector2(3, 345)
+script = ExtResource("3_1bvp3")

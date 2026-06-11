@@ -1,0 +1,136 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca4jcplemv61b"]
+
+[ext_resource type="Script" uid="uid://b4r8qehjnwwjg" path="res://control.gd" id="1_0f027"]
+[ext_resource type="Script" uid="uid://kuejugroq0rr" path="res://matrix_drawer.gd" id="1_2c62f"]
+[ext_resource type="Script" uid="uid://ba8pbe22wqpx" path="res://main_scene.gd" id="1_gyfs4"]
+[ext_resource type="Theme" uid="uid://dy3gqj1gs65q5" path="res://main_scene.tres" id="3_d5x1h"]
+
+[sub_resource type="Theme" id="Theme_d5x1h"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_gyfs4")
+
+[node name="MatrixDrawer" type="Node2D" parent="."]
+script = ExtResource("1_2c62f")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_d5x1h")
+script = ExtResource("1_0f027")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 297.0
+offset_right = 236.0
+offset_bottom = 465.0
+theme = ExtResource("3_d5x1h")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "A ="
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "("
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+columns = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "a"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "b"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "c"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "d"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = ")"
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 0
+offset_right = 323.0
+offset_bottom = 254.0
+columns = 2
+
+[node name="Label_a" type="Label" parent="Control/GridContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_d5x1h")
+
+[node name="Label_b" type="Label" parent="Control/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label_c" type="Label" parent="Control/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label_d" type="Label" parent="Control/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HSlider_a" type="HSlider" parent="Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = -5.0
+max_value = 5.0
+step = 0.1
+
+[node name="HSlider_b" type="HSlider" parent="Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = -5.0
+max_value = 5.0
+step = 0.1
+
+[node name="HSlider_c" type="HSlider" parent="Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = -5.0
+max_value = 5.0
+step = 0.1
+
+[node name="HSlider_d" type="HSlider" parent="Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = -5.0
+max_value = 5.0
+step = 0.1
+
+[connection signal="value_changed" from="Control/GridContainer/HSlider_a" to="Control" method="_on_h_slider_a_value_changed"]
+[connection signal="value_changed" from="Control/GridContainer/HSlider_b" to="Control" method="_on_h_slider_b_value_changed"]
+[connection signal="value_changed" from="Control/GridContainer/HSlider_c" to="Control" method="_on_h_slider_c_value_changed"]
+[connection signal="value_changed" from="Control/GridContainer/HSlider_d" to="Control" method="_on_h_slider_d_value_changed"]

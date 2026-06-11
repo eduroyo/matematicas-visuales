@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dqs0oxq38qfyd"]
+
+[ext_resource type="Script" uid="uid://bayt1x4ruv0hw" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://h50a0ur78rty" path="res://gráfica.gd" id="2_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=858563097]
+script = ExtResource("1_0xm2m")
+
+[node name="Grafica" type="Node2D" parent="." unique_id=2070629824]
+position = Vector2(55, 205)
+scale = Vector2(0.9, 0.9)
+script = ExtResource("2_h2yge")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=87741216]
+
+[node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=1888717152]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_right = 125.0
+offset_bottom = 103.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer" unique_id=165530398]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer/MarginContainer" unique_id=1722867914]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/PanelContainer/MarginContainer/VBoxContainer" unique_id=172311845]
+layout_mode = 2
+text = "Fenómeno de Runge"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/MarginContainer/VBoxContainer" unique_id=937731389]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="Label_n" type="Label" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1204283011]
+layout_mode = 2
+
+[node name="Slider_n" type="HSlider" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=103880224]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 2
+min_value = 2.0
+max_value = 40.0
+value = 2.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/PanelContainer/MarginContainer/VBoxContainer" unique_id=340390710]
+layout_mode = 2
+
+[node name="Label_nodos" type="Label" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2064663426]
+layout_mode = 2
+
+[node name="Selector_nodes" type="OptionButton" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1831728925]
+layout_mode = 2
+
+[node name="Label_f" type="Label" parent="UI" unique_id=98168527]
+offset_left = 469.0
+offset_top = 307.0
+offset_right = 509.0
+offset_bottom = 330.0
+theme_override_colors/font_color = Color(0.0806, 0.43121004, 0.62, 1)
+text = "f(x)"
+
+[node name="Label_interp" type="Label" parent="UI" unique_id=1324218374]
+offset_left = 436.0
+offset_top = 335.0
+offset_right = 476.0
+offset_bottom = 358.0
+theme_override_colors/font_color = Color(0.62, 0.34771666, 0.09299999, 1)
+text = "p(x)"
